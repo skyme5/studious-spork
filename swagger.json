@@ -18,27 +18,35 @@
       "name": "Snapchat"
     }
   ],
-  "schemes": [
-    "https"
-  ],
+  "schemes": ["https"],
   "paths": {
     "/get/{username}": {
       "get": {
-        "tags": [
-          "username"
-        ],
+        "tags": ["username"],
         "summary": "Get Snapchat content for User",
         "description": "Returns a single pet",
         "operationId": "username",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "username",
             "in": "path",
             "description": "Username of person",
             "required": true,
+            "type": "string"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Number of result to return per page",
+            "required": false,
             "type": "string"
           }
         ],
